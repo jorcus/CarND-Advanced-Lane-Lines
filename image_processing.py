@@ -65,9 +65,7 @@ def combined_threshold(img):
     mag_bin = magnitude_threshold(img, sobel_kernel=5, mag_thresh=(10, 255))
     dir_bin = direction_threshold(img, sobel_kernel=15, thresh=(0.7, 1.3))
     hls_bin = hls_threshold(img, thresh=(170, 255))
-    yv_bin = yuv_threshold(img,y_thresh=(200,255),u_thresh=(200,255),v_thresh=(0,100))
-    lab_b_bin = lab_b_threshold(img, thresh
-=(140,255))
+    lab_b_bin = lab_b_threshold(img, thresh=(140,255))
     mag_dir = np.zeros_like(dir_bin)
     mag_dir[(mag_bin == 1) & (dir_bin == 1)] = 1
     combined = np.zeros_like(dir_bin)
